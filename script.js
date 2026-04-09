@@ -17,7 +17,9 @@ let cacheVendas = [];
 // ========== FUNÇÕES AUXILIARES ==========
 
 function formatarMoeda(valor) {
-    return 'R$ ' + valor.toFixed(2).replace('.', ',');
+    // Se 'valor' for undefined ou null, usa 0
+    const numero = valor || 0; 
+    return 'R$ ' + numero.toFixed(2).replace('.', ',');
 }
 
 function mostrarAlerta(mensagem, tipo = 'sucesso') {
